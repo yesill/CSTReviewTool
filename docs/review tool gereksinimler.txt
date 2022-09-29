@@ -1,0 +1,8 @@
+Review toolunu biz doküman gözden geçirmelerini yaparken kullanmak istiyoruz. 
+Reviewerlar dokümanları gözden geçirirken yorumlarını bizim bir formumuz var
+ona dolduruyorlar, tüm form dolana kadar doküman sahibi beklemek zorunda kalıyor.
+Onun yerine online bir tool ile review etmek, yorumları review tooluna girmek istiyoruz.
+Sistemde bazı roller olacak Kalite Güvence Mühendisi: review başlatacak, review 
+edilecek öğeyi seçecek svnden, ve reiviewerları seçecek, öğeye sahibini seçecek 
+ve review başlatacak. Başlatınca insanlara e-posta gitmesini istiyoruz review etmeleri
+gereken doküman, kaynak kod vs'nin de linkini email ile insanlara göndereceğiz.

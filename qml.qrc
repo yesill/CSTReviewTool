@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>UI/LoginScreen/LoginScreen.qml</file>
+        <file>UI/LoginScreen/LoginDialog.qml</file>
+        <file>UI/QualityEngScreen/QualityEngScreen.qml</file>
+        <file>UI/QualityEngScreen/QualityEngScreenReviewListModel.qml</file>
+        <file>UI/QualityEngScreen/QualityEngScreenReviewListRectangle.qml</file>
+        <file>UI/QualityEngScreen/QualityEngScreenReviewDetailDialog.qml</file>
+        <file>UI/CustomComponents/LineEdit.qml</file>
+        <file>UI/QualityEngScreen/ReviewAdd/ReviewAddDialog.qml</file>
+        <file>UI/QualityEngScreen/ReviewAdd/ReviewAddRow.qml</file>
+        <file>UI/QualityEngScreen/ReviewAdd/ReviewAddScrollView.qml</file>
+        <file>UI/CustomComponents/CustomButton1.qml</file>
+        <file>UI/CustomComponents/TwoButtonRow.qml</file>
+        <file>sources/plus1.png</file>
+        <file>sources/x1.png</file>
+        <file>UI/QualityEngScreen/ReviewAdd/ReviewAddLabelRow.qml</file>
+        <file>UI/QualityEngScreen/ReviewAdd/ReviewAddReviewerScrollView.qml</file>
+        <file>UI/CustomComponents/UserCard.qml</file>
+        <file>UI/QualityEngScreen/ReviewAdd/ReviewAddReviewerAddDialog.qml</file>
+    </qresource>
+</RCC>
