@@ -47,11 +47,12 @@ Item {
                 id: quality_engine_screen_listView
                 anchors.fill: parent
                 anchors.topMargin: parent.height * 0.012
+                anchors.bottomMargin: parent.height * 0.012
                 clip: true
 
                 model: _DBListModel
                 delegate: QualityEngScreenReviewListRectangle {
-                    title: model.title
+                    title: model.project_name
                     start_date: model.start_date
                     end_date: model.end_date
                     status: model.status

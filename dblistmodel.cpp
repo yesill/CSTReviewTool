@@ -4,7 +4,7 @@ DBListModel::DBListModel(QObject *parent)
     : QAbstractListModel(parent)
 {
     // Connect to the database
-    db.setDatabaseName("C:\\Programming\\qt_projects\\revtooldb.db");
+    db.setDatabaseName("C:\\Programming\\qt_projects\\reviewtooldb.db");
     db.open();
 
     m_data.clear();
@@ -16,10 +16,16 @@ DBListModel::DBListModel(QObject *parent)
     {
         QSqlRecord record = query.record();
         m_data << Data(
-                    record.value("TITLE").toString(),
-                    record.value("START DATE").toString(),
-                    record.value("END DATE").toString(),
-                    record.value("STATUS").toString()
+                      record.value("Review Product").toString(),
+                      record.value("Project Name").toString(),
+                      record.value("Report Number").toInt(),
+                      record.value("Reviewed Product Definition").toString(),
+                      record.value("Product Size").toString(),
+                      record.value("Produced By").toString(),
+                      record.value("Peer Review Responsible").toString(),
+                      record.value("START DATE").toString(),
+                      record.value("END DATE").toString(),
+                      record.value("STATUS").toString()
                 );
     }
 
@@ -42,9 +48,20 @@ QVariant DBListModel::data(const QModelIndex &index, int role) const
         return QVariant();
 
     const Data &data = m_data.at(index.row());
-    if ( role == TitleRole ){
-        return data.title;
-    }
+    if ( role == ReviewProductRole )
+        return data.review_product;
+    else if ( role == ProjectNameRole )
+        return data.project_name;
+    else if ( role == ReportNumberRole )
+        return data.report_number;
+    else if ( role == ReviewedProductDefinitionRole )
+        return data.reviewed_product_definition;
+    else if ( role == ProductSizeRole )
+        return data.product_size;
+    else if ( role == ProducedByRole )
+        return data.produced_by;
+    else if ( role == PeerReviewResponsibleRole )
+        return data.peer_review_responsible;
     else if ( role == StartDateRole )
         return data.start_date;
     else if ( role == EndDateRole )
@@ -58,7 +75,13 @@ QVariant DBListModel::data(const QModelIndex &index, int role) const
 QHash<int, QByteArray> DBListModel::roleNames() const
 {
     static QHash<int, QByteArray> mapping {
-        {TitleRole, "title"},
+        {ReviewProductRole, "review_product"},
+        {ProjectNameRole, "project_name"},
+        {ReportNumberRole, "report_number"},
+        {ReviewedProductDefinitionRole, "reviewed_product_definition"},
+        {ProductSizeRole, "product_size"},
+        {ProducedByRole, "produced_by"},
+        {PeerReviewResponsibleRole, "peer_review_responsible"},
         {StartDateRole, "start_date"},
         {EndDateRole, "end_date"},
         {StatusRole, "status"}

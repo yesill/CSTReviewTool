@@ -25,7 +25,7 @@ ApplicationWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 Text{
-                    text: "REVIEW TOOL v0.5.1"
+                    text: "REVIEW TOOL v0.5.3"
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     anchors.leftMargin: parent.width * 0.1

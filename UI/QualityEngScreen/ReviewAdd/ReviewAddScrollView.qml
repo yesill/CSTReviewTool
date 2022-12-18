@@ -121,7 +121,7 @@ Item {
                     font_pixel_size: fontPixelSize
                 }
 
-                ReviewAddRow {
+                /*ReviewAddRow {
                     id: row7
                     width: parent.width
                     height: rowHeight
@@ -141,7 +141,7 @@ Item {
                     anchors.top: row7.bottom
                     labelText: "Gözden Geçirme Tarih(ler)i:"
                     font_pixel_size: fontPixelSize
-                }
+                }*/
 
                 ReviewAddRow {
                     id: row9
@@ -149,7 +149,7 @@ Item {
                     height: rowHeight
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    anchors.top: row8.bottom
+                    anchors.top: row6.bottom
                     labelText: "Ürünü Oluşturan (İsim/İmza):"
                     font_pixel_size: fontPixelSize
                 }

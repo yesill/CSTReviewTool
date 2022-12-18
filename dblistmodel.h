@@ -7,7 +7,7 @@
 #include <QSqlRecord>
 #include <QDebug>
 
-struct Data {
+/*struct Data {
     Data() {}
     Data( const QString& title,  const QString& start_date,  const QString& end_date,  const QString& status)
         : title(title), start_date(start_date), end_date(end_date),status(status) {}
@@ -15,6 +15,42 @@ struct Data {
     QString start_date;
     QString end_date;
     QString status;
+};*/
+
+struct Data {
+    Data() {}
+    Data( const QString& review_product,
+          const QString& project_name,
+          int report_number,
+          const QString& reviewed_product_definition,
+          const QString& product_size,
+          const QString& produced_by,
+          const QString& peer_review_responsible,
+          const QString& start_date,
+          const QString& end_date,
+          const QString& status)
+        : review_product(review_product),
+          project_name(project_name),
+          report_number(report_number),
+          reviewed_product_definition(reviewed_product_definition),
+          product_size(product_size),
+          produced_by(produced_by),
+          peer_review_responsible(peer_review_responsible),
+          start_date(start_date),
+          end_date(end_date),
+          status(status) {}
+
+    QString review_product;
+    QString project_name;
+    int report_number;
+    QString reviewed_product_definition;
+    QString product_size;
+    QString produced_by;
+    QString peer_review_responsible;
+    QString start_date;
+    QString end_date;
+    QString status;
+
 };
 
 class DBListModel : public QAbstractListModel
@@ -23,7 +59,13 @@ class DBListModel : public QAbstractListModel
 
 public:
     enum Roles {
-        TitleRole = Qt::UserRole,
+        ReviewProductRole,
+        ProjectNameRole,
+        ReportNumberRole = Qt::UserRole,
+        ReviewedProductDefinitionRole,
+        ProductSizeRole,
+        ProducedByRole,
+        PeerReviewResponsibleRole,
         StartDateRole,
         EndDateRole,
         StatusRole
