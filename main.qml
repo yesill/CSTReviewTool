@@ -3,39 +3,43 @@ import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.4
 import QtQuick.Window 2.11
 
+import "UI/QualityEngScreen" as QES
+
 ApplicationWindow {
     id: main_window
-    width: 640
-    height: 480
+    width: 1366
+    height: 768
     visible: true
 
     header: ToolBar{
+
         //outer rectangle
         Rectangle{
             anchors.fill: parent
             color: "#827979"
-            //Logo rectangle
+
+            // logo rectangle
             Rectangle{
                 height: parent.height
                 width: parent.width*0.2
                 color: "transparent"
-                anchors{
-                    verticalCenter: parent.verticalCenter
-                    left: parent.left
-                }
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.left: parent.left
                 Text{
-                    text: "CS-TECH REVIEW TOOL"
-                    anchors{
-                        verticalCenter: parent.verticalCenter
-                        left: parent.left
-                        leftMargin: parent.width*0.1
-                    }
+                    text: "REVIEW TOOL v0.5"
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.left: parent.left
+                    anchors.leftMargin: parent.width * 0.1
                 }
-            }//logo rectangle ends
+            }
         }
     }
 
-    StackView{
+    QES.QualityEngScreen {
+        anchors.fill: parent
+    }
+
+    /*StackView{
         id: stackview
         anchors.fill: parent
 
@@ -44,5 +48,5 @@ ApplicationWindow {
             anchors.fill: parent
             source: "./UI/QualityEngScreen/QualityEngScreen.qml"
         }
-    }
+    }*/
 }

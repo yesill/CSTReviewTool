@@ -4,9 +4,7 @@
         <file>UI/LoginScreen/LoginScreen.qml</file>
         <file>UI/LoginScreen/LoginDialog.qml</file>
         <file>UI/QualityEngScreen/QualityEngScreen.qml</file>
-        <file>UI/QualityEngScreen/QualityEngScreenReviewListModel.qml</file>
         <file>UI/QualityEngScreen/QualityEngScreenReviewListRectangle.qml</file>
-        <file>UI/QualityEngScreen/QualityEngScreenReviewDetailDialog.qml</file>
         <file>UI/CustomComponents/LineEdit.qml</file>
         <file>UI/QualityEngScreen/ReviewAdd/ReviewAddDialog.qml</file>
         <file>UI/QualityEngScreen/ReviewAdd/ReviewAddRow.qml</file>

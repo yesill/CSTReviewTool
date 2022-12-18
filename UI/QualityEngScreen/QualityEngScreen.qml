@@ -29,8 +29,6 @@ Item {
     Rectangle{
         id: quality_engine_screen_background
         anchors.fill: parent
-        border.color: "#AA00FF"
-        border.width: 5
         radius: rad
 
         //reviews list rectangle
@@ -39,65 +37,25 @@ Item {
             width: parent.width*0.8
             height: parent.height*0.8
             radius: rad
-            border{
-                color: "#000000"
-                width: 5
-            }
-            anchors{
-                centerIn: parent
-                verticalCenter: parent.verticalCenter
-                horizontalCenter: parent.horizontalCenter
-            }
+            border.color: "#000000"
+            border.width: 3
+            anchors.centerIn: parent
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.horizontalCenter: parent.horizontalCenter
 
-
-            ScrollView{
-                id: reviews_scroll_view
+            ListView{
+                id: quality_engine_screen_listView
                 anchors.fill: parent
+                anchors.topMargin: parent.height * 0.012
+                clip: true
 
-                ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
-                ScrollBar.vertical.policy: ScrollBar.AlwaysOn
-
-                ListView{
-                    id: quality_engine_screen_listView
-                    anchors.fill: parent
-                    anchors.topMargin: 6
-                    anchors.bottomMargin: 6
-                    clip: true
-                    snapMode: ListView.SnapToItem
-                    headerPositioning: ListView.OverlayHeader
-                    header: Rectangle{
-                        anchors.top: parent.top
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        width: parent.width-8
-                        //height: reviews_list_rectangle.height*0.2
-                        z: 2
-
-                        color: "#aa0045"
-                    }
-                    /* //default highlighter ! not useful
-                    highlight: highlight_bar
-                    Component{
-                        id: highlight_bar
-                        Rectangle{
-                            width: parent.width - 12
-                            height: 20
-                            radius: rad
-                            anchors{
-                                horizontalCenter: parent.horizontalCenter
-                            }
-
-                            border{
-                                color: "#14a6db"
-                                width: 3
-                            }
-                            color: "transparent"
-                        }
-                    }*/
-
-                    model: QualityEngScreenReviewListModel{}
-                    delegate: QualityEngScreenReviewListRectangle{}
-                }//list view ends
-
+                model: _DBListModel
+                delegate: QualityEngScreenReviewListRectangle {
+                    title: model.title
+                    start_date: model.start_date
+                    end_date: model.end_date
+                    status: model.status
+                }
             }
 
         }//reviews list rectangle ends

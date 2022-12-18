@@ -2,14 +2,25 @@ import QtQuick 2.0
 
 Rectangle {
     id: outer_rectangle
-    width: parent.width - 12
-    height: parent.height / 25
+    //width: parent.width
+    height: 100
     color: "transparent"
+
     radius: 10
-    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.leftMargin: parent.width * 0.007
+    anchors.rightMargin: parent.width * 0.016
+
+    property string title
+    property string start_date
+    property string end_date
+    property string status
+
+    default property int font_pixel_size: 22
 
     //click event
-    //list object mouse -basic- animations
+    //list object mouse -basic- animation
     MouseArea{
         property bool isClicked: false
         id: outer_rectangle_mouse_area
@@ -43,25 +54,23 @@ Rectangle {
     //review title rectangle
     Rectangle{
         id: review_title_rectangle
-        width: parent.width * 0.6
+        //width: parent.width * 0.6
         height: parent.height
         color: "transparent"
-        anchors{
-            horizontalCenter: outer_rectangle.verticalCenter
-            left: outer_rectangle.left
-        }
+        anchors.top: outer_rectangle.top
+        anchors.bottom: outer_rectangle.bottom
+        anchors.left: outer_rectangle.left
+        anchors.right: start_date.left
+        anchors.leftMargin: parent.width * 0.01
+
         Text{
             id: text_title
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            anchors{
-                verticalCenter: parent.verticalCenter
-                left: parent.left
-                leftMargin: parent.width*0.05
-            }
+            anchors.leftMargin: parent.width * 0.5
 
-            font.pixelSize: 30
-            text: review_title
+            font.pixelSize: font_pixel_size
+            text: title     // @@@@@@@@@@@@@@@@@@@@@@@@@
         }
     }
     //start date rectangle
@@ -70,46 +79,28 @@ Rectangle {
         width: parent.width * 0.1
         height: parent.height
         color: "transparent"
-        anchors{
-            horizontalCenter: outer_rectangle.verticalCenter
-            right: end_date_rectangle.left
-        }
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.right: end_date_rectangle.left
         Text{
             anchors.centerIn: parent
-            font.pixelSize: 30
-            text: review_start_date
+            font.pixelSize: font_pixel_size
+            text: start_date    // @@@@@@@@@@@@@@@@@@@@@@@@@
         }
     }
     //end date rectangle
     Rectangle{
         id: end_date_rectangle
-        width: parent.width * 0.1
+        width: parent.width * 0.16
         height: parent.height
-        anchors{
-            horizontalCenter: outer_rectangle.verticalCenter
-            right: notifications_rectangle.left
-        }
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.right: status_rectangle.left
         color: "transparent"
         Text{
             anchors.centerIn: parent
-            font.pixelSize: 30
-            text: review_end_date
-        }
-    }
-    //notifications rectangle
-    Rectangle{
-        id: notifications_rectangle
-        width: parent.width * 0.1
-        height: parent.height
-        anchors{
-            horizontalCenter: outer_rectangle.verticalCenter
-            right: status_rectangle.left
-        }
-        color: "transparent"
-        Text{
-            anchors.centerIn: parent
-            font.pixelSize: 30
-            text: review_notifications
+            font.pixelSize: font_pixel_size
+            text: end_date  // @@@@@@@@@@@@@@@@@@@@@@@@@
         }
     }
     //status rectangle
@@ -117,15 +108,14 @@ Rectangle {
         id: status_rectangle
         width: parent.width * 0.1
         height: parent.height
-        anchors{
-            horizontalCenter: outer_rectangle.verticalCenter
-            right: outer_rectangle.right
-        }
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.right: outer_rectangle.right
         color: "transparent"
         Text{
             anchors.centerIn: parent
-            font.pixelSize: 30
-            text: review_status
+            font.pixelSize: font_pixel_size
+            text: status    // @@@@@@@@@@@@@@@@@@@@@@@@@
         }
     }
 }//delegate ends
