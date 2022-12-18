@@ -20,7 +20,7 @@ ApplicationWindow {
             // logo rectangle
             Rectangle{
                 height: parent.height
-                width: parent.width*0.2
+                width: parent.width * 0.2
                 color: "transparent"
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
