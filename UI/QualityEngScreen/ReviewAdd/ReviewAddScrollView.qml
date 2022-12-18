@@ -59,10 +59,10 @@ Item {
                     anchors.right: parent.right
                     anchors.top: parent.top
                     labelText: "Gözden Geçirilen İş Ürünü:"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
-                CustomComponents.TwoButtonRow{
+                /*CustomComponents.TwoButtonRow{
                     id: row2
                     width: parent.width
                     height: rowHeight
@@ -75,7 +75,7 @@ Item {
                     borderRadius: 20
                     buttonThickness: 3
                     buttonColor: "#0000ff"
-                }
+                }*/
 
                 ReviewAddRow {
                     id: row3
@@ -83,9 +83,9 @@ Item {
                     height: rowHeight
                     anchors.left: parent.left
                     anchors.right: parent.right
-                    anchors.top: row2.bottom
+                    anchors.top: row1.bottom
                     labelText: "Proje Adı:"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddRow {
@@ -96,7 +96,7 @@ Item {
                     anchors.right: parent.right
                     anchors.top: row3.bottom
                     labelText: "Rapor No:"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddRow {
@@ -107,7 +107,7 @@ Item {
                     anchors.right: parent.right
                     anchors.top: row4.bottom
                     labelText: "Gözden Geçirilen Ürün Tanımı:"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddRow {
@@ -118,7 +118,7 @@ Item {
                     anchors.right: parent.right
                     anchors.top: row5.bottom
                     labelText: "Ürünün Büyüklüğü (Sayfa, SLOC vb.):"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddRow {
@@ -129,7 +129,7 @@ Item {
                     anchors.right: parent.right
                     anchors.top: row6.bottom
                     labelText: "Ürünün Hazırlanma Zamanı (Saat):"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddRow {
@@ -140,7 +140,7 @@ Item {
                     anchors.right: parent.right
                     anchors.top: row7.bottom
                     labelText: "Gözden Geçirme Tarih(ler)i:"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddRow {
@@ -151,7 +151,7 @@ Item {
                     anchors.right: parent.right
                     anchors.top: row8.bottom
                     labelText: "Ürünü Oluşturan (İsim/İmza):"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddRow {
@@ -162,7 +162,7 @@ Item {
                     anchors.right: parent.right
                     anchors.top: row9.bottom
                     labelText: "Eşdeğer Gözden Geçirme Sorumlusu:"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddLabelRow{
@@ -174,13 +174,13 @@ Item {
                     anchors.top: row10.bottom
                     labelText: "Bulguların Derecelendirilmesi: Ö, A, U, Y\n"+
                                "Ö (I): Önemli (Important)\tU (S): Ufak (Small)\tA (C): Anlaşılırlık (Clarity)\tY (T): Yazım Hatası (Typo)"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddLabelRow{
                     id: row12
                     width: parent.width
-                    height: rowHeight * 1.6
+                    height: rowHeight * 1.8
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.top: row11.bottom
@@ -188,7 +188,7 @@ Item {
                                "Sınıf I: Mühendislik Değişikliği Gerektiren Bulgular (Class I: Findings Requiring Engineering Changes)\n"+
                                "Sınıf II: Mühendislik Değişikliği Gerektirmeyen Bulgular (Class II: Findings Not Requiring Engineering Changes)\n"+
                                "UD: Uygun Değil (NA: Not Appropriate) "
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddLabelRow {
@@ -199,7 +199,7 @@ Item {
                     anchors.right: parent.right
                     anchors.top: row12.bottom
                     labelText: "Bulguların Durumları (States of Findings):\tA (O): Açık (Open)\tK (C): Kapalı (Closed)"
-                    fontPixelSize: fontPixelSize
+                    font_pixel_size: fontPixelSize
                 }
 
                 ReviewAddLabelRow {
@@ -209,8 +209,8 @@ Item {
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.top: row13.bottom
-                    labelText: "Katılımcılar (Participants );"
-                    fontPixelSize: fontPixelSize
+                    labelText: "İnceleme Metni (Review Text);"
+                    font_pixel_size: fontPixelSize
                 }
 
                 Rectangle{
@@ -228,8 +228,9 @@ Item {
                         id: row15
                         fontPixelSize: fontPixelSize
                         anchors.fill: parent
-                        anchors.topMargin: parent.border.width
-                        anchors.bottomMargin: parent.border.width
+                        anchors.topMargin: parent.border.width * 2
+                        anchors.bottomMargin: parent.border.width * 2
+                        anchors.rightMargin: parent.border.width * 1.2
                     }
                 }
             }

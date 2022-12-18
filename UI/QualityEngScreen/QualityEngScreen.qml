@@ -66,16 +66,12 @@ Item {
             width: parent.width*0.12
             height: parent.height*0.05
             radius: rad
-            anchors{
-                bottom: parent.bottom
-                right: parent.right
-                bottomMargin: 20
-                rightMargin: 20
-            }
-            border{
-                width: 2
-                color: "#AAAA00"
-            }
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            anchors.bottomMargin: 20
+            anchors.rightMargin: 20
+            border.width: 2
+            border.color: "#AAAA00"
             Text{
                 anchors.centerIn: parent
                 font.pixelSize: 20

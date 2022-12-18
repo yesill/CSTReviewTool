@@ -15,6 +15,7 @@ Page {
     signal destroyMe()
 
     function reviewAdd(click){
+        // change me!!!
         destroyMe()
     }
 
@@ -52,6 +53,38 @@ Page {
         anchors.fill: parent
 
         Rectangle {
+            id: rectangle_return
+
+            width: parent.width * 0.03
+            height: width
+
+            anchors.top: parent.top
+            anchors.right: rectangle_general_column.left
+            anchors.topMargin: parent.height * 0.02
+            anchors.rightMargin: parent.width * 0.01
+
+            radius: width * 0.5
+
+            border.width: 3
+            border.color: "#00aaaa"
+
+            Image {
+                id: previous_page_icon
+                source: "../../../sources/left_arrow1.png"
+                anchors.fill: parent
+                anchors.margins: width * 0.1
+            }
+
+            MouseArea {
+                anchors.fill: parent
+
+                onClicked: {
+                    destroyMe()
+                }
+            }
+        }
+
+        Rectangle {
             id: rectangle_general_column
             anchors.left: parent.left
             anchors.right: parent.right
@@ -63,15 +96,13 @@ Page {
             ReviewAddScrollView {
                 id: reviewAddScrollView1
                 rowHeight: row_height
-                anchors{
-                    top: parent.top
-                    bottom: rowLast.top
-                    left: parent.left
-                    right: parent.right
-                    topMargin: 10
-                    bottomMargin: 10
-                }
-                fontPixelSize: 20
+                anchors.top: parent.top
+                anchors.bottom: rowLast.top
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.topMargin: 10
+                anchors.bottomMargin: 10
+                fontPixelSize: rectangle_general.width * 0.012
 
             }
 

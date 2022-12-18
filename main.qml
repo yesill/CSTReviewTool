@@ -12,7 +12,6 @@ ApplicationWindow {
     visible: true
 
     header: ToolBar{
-
         //outer rectangle
         Rectangle{
             anchors.fill: parent
@@ -26,7 +25,7 @@ ApplicationWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 Text{
-                    text: "REVIEW TOOL v0.5"
+                    text: "REVIEW TOOL v0.5.1"
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.left: parent.left
                     anchors.leftMargin: parent.width * 0.1

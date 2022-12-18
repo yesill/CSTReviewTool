@@ -17,5 +17,7 @@
         <file>UI/QualityEngScreen/ReviewAdd/ReviewAddReviewerScrollView.qml</file>
         <file>UI/CustomComponents/UserCard.qml</file>
         <file>UI/QualityEngScreen/ReviewAdd/ReviewAddReviewerAddDialog.qml</file>
+        <file>sources/left_arrow1.png</file>
+        <file>sources/left_arrow2.png</file>
     </qresource>
 </RCC>

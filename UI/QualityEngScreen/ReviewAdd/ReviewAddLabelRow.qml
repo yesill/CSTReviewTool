@@ -2,7 +2,7 @@ import QtQuick 2.0
 
 Item {
     property string labelText
-    property int fontPixelSize
+    property int font_pixel_size
 
     //label rect
     Rectangle{
@@ -12,8 +12,8 @@ Item {
         Text{
             id: text
             anchors.fill: parent
-            font.pixelSize: fontPixelSize
-            horizontalAlignment: Text.left
+            font.pixelSize: font_pixel_size
+            //horizontalAlignment: Text.left
             verticalAlignment: Text.AlignVCenter
             text: labelText
         }
